@@ -1,0 +1,22 @@
+Metrics/AbcSize:
+  Exclude:
+    - lib/agentic_runtime/hooks.rb
+Metrics/CyclomaticComplexity:
+  Exclude:
+    - lib/agentic_runtime/hooks.rb
+Metrics/MethodLength:
+  CountAsOne:
+    - heredoc
+  Exclude:
+    - lib/agentic_runtime/hooks.rb
+    - lib/agentic_runtime/step/step_commands.rb
+    - lib/agentic_runtime/step/step.rb
+Metrics/ParameterLists:
+  Exclude:
+    - lib/agentic_runtime/step/check_completion.rb
+Style/Documentation:
+  Exclude:
+    - lib/agentic_runtime/task/task.rb
+    - lib/agentic_runtime/workspace.rb
+    - lib/agentic_runtime/hooks.rb
+    - lib/agentic_runtime/step/step_commands.rb

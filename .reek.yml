@@ -1,0 +1,85 @@
+detectors:
+  UncommunicativeVariableName:
+    accept:
+      - '^_$'
+      - '^e$'
+  DuplicateMethodCall:
+    allow_calls:
+      - '^respond\(stdout\)$'
+    exclude:
+      - 'AgenticRuntime::Step::CompleteStep#complete'
+      - 'AgenticRuntime::Hooks#run'
+      - 'AgenticRuntime::Step::StartStep#start'
+  FeatureEnvy:
+    exclude:
+      - 'AgenticRuntime::Hooks#session_id'
+      - 'AgenticRuntime::Task::TaskCommands#parameters'
+      - 'AgenticRuntime::Session#=='
+      - 'AgenticRuntime::Workspace#save_assignment'
+      - 'AgenticRuntime::Workspace#task_files'
+      - 'AgenticRuntime::Workspace#place_checklists'
+  TooManyStatements:
+    exclude:
+      - 'AgenticRuntime::CLI#self.run'
+      - 'AgenticRuntime::Hooks#run'
+      - 'AgenticRuntime::Hooks#respond'
+      - 'AgenticRuntime::Task::TaskCommands#create'
+      - 'AgenticRuntime::Step::StepCommands#complete'
+      - 'AgenticRuntime::Task::Task#initialize'
+      - 'AgenticRuntime::Workflow#self.definitions'
+      - 'AgenticRuntime::Hooks#initialize'
+      - 'AgenticRuntime::Workspace#find'
+      - 'AgenticRuntime::Step::CompleteStep#complete'
+      - 'AgenticRuntime::Plan#advance'
+      - 'AgenticRuntime::Step::Step#initialize'
+      - 'AgenticRuntime::Step::StartStep#start'
+      - 'AgenticRuntime::Step::StepDefinition#artifact_declarations'
+      - 'AgenticRuntime::Step::StepDefinition#initialize'
+      - 'AgenticRuntime::Workspace#restored_steps'
+  UtilityFunction:
+    exclude:
+      - 'AgenticRuntime::Task::Continuation#decide'
+      - 'AgenticRuntime::Workspace#task_files'
+      - 'AgenticRuntime::Workspace#progress_files'
+      - 'AgenticRuntime::Workspace#stored_steps'
+      - 'AgenticRuntime::Step::CheckCompletion#missing_artifacts'
+      - 'AgenticRuntime::Step::CheckCompletion#unfinished_checks'
+      - 'AgenticRuntime::Step::CheckCompletion#missing_approval'
+  LongParameterList:
+    exclude:
+      - 'AgenticRuntime::Task::Task#self.restore'
+      - 'AgenticRuntime::Task::CreateTask#create'
+      - 'AgenticRuntime::Step::Step#self.restore'
+      - 'AgenticRuntime::Task::Task#self.create'
+      - 'AgenticRuntime::Step::CheckCompletion#compare'
+  ControlParameter:
+    exclude:
+      - 'AgenticRuntime::Workspace#find_by'
+      - 'AgenticRuntime::Step::CompleteStep#complete'
+      - 'AgenticRuntime::Step::CheckCompletion#missing_approval'
+  TooManyInstanceVariables:
+    exclude:
+      - 'AgenticRuntime::Task::Task'
+      - 'AgenticRuntime::Hooks'
+      - 'AgenticRuntime::Step::Step'
+  NilCheck:
+    exclude:
+      - 'AgenticRuntime::Task::Progress#in_progress?'
+      - 'AgenticRuntime::Task::Progress#completed?'
+  IrresponsibleModule:
+    exclude:
+      - 'AgenticRuntime::Task::Task'
+      - 'AgenticRuntime::Workspace'
+      - 'AgenticRuntime::Hooks'
+      - 'AgenticRuntime::Step::StepCommands'
+      - 'AgenticRuntime::Step::CheckCompletion'
+      - 'AgenticRuntime::Step::CompletionVerdict'
+      - 'AgenticRuntime::Step::Step::CompletionRejected'
+      - 'AgenticRuntime::Asset::Checklist'
+      - 'AgenticRuntime::Asset::StepAssets'
+      - 'AgenticRuntime::Asset::ProjectAssets'
+      - 'AgenticRuntime::Step::StartStep'
+  NestedIterators:
+    exclude:
+      - 'AgenticRuntime::Step::CheckCompletion#missing_artifacts'
+      - 'AgenticRuntime::Step::CompletionVerdict#initialize'
